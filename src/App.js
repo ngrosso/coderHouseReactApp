@@ -1,4 +1,5 @@
 import NavBar from "./components/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
 import { useEffect } from "react";
 import M from "materialize-css";
 
@@ -9,10 +10,6 @@ const menu = [
   },
   {
     name: "Productos",
-    path: "#"
-  },
-  {
-    name: "Carrito",
     path: "#"
   }
 ]
@@ -25,6 +22,7 @@ function App() {
 
   return (<>
     <NavBar menu={menu}/>
+    <ItemListContainer/>
   </>
   );
 }

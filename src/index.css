@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.custom-link{
+  line-height: 0 !important;
+}
+
+.custom-shopping-cart{
+
+  display:inline !important;
+  flex-direction: column;
+}
+
+.custom-shopping-cart-badge{
+  display:inline-block !important;
+}
+
+span.badge{
+  min-width: 3rem !important;
+  font-size: 1rem !important;
+}

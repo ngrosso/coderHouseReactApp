@@ -10,7 +10,12 @@ const CartWidget = () => {
 
 
   return (
-    <a onClick={sumar} class="custom-link"><i class="material-icons custom-shopping-cart">shopping_cart</i><span class="medium new badge red custom-shopping-cart-badge" data-badge-caption="">{items>9?"9+":items}</span></a>
+    <a onClick={sumar} className="custom-link">
+      <i className="material-icons custom-shopping-cart">shopping_cart</i>
+      <span className="medium new badge red custom-shopping-cart-badge" data-badge-caption="">
+        {items > 9 ? "9+" : items}
+      </span>
+    </a>
   )
 };
 

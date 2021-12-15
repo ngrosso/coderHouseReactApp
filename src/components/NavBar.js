@@ -5,12 +5,12 @@ const NavBar = ({ menu }) => {
   return (
     <header>
       <nav>
-        <div class="nav-wrapper blue">
-          <div class="container">
-            <a href="/" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <div className="nav-wrapper blue">
+          <div className="container">
+            <a href="/" className="brand-logo">Logo</a>
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
               {menu.map((element, index) => {
-                return <li><a key={index} href={element.path}>{element.name}</a></li>
+                return <li key={index}><a  href={element.path}>{element.name}</a></li>
               }
               )}
               <li><CartWidget /></li>

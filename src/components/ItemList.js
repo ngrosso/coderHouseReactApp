@@ -1,18 +1,28 @@
 import Item from "./Item";
 
-const ItemList = ({ items }) => {
-  
-  {items.map(item => {
-    return (
-      <Item
-        id={item.id}
-        title={item.title}
-        price={item.price}
-        pictureURL={item.pictureURL}
-      />
-    );
-  })}
-};
+const ItemList = (props) => {
+  const { productos } = props;
 
+  if (productos !== []) {
+    return (
+      <>
+        <div>
+          {productos.map((producto) => {
+            return (
+              <Item
+                key={producto.id}
+                title={producto.title}
+                price={producto.price}
+                pictureURL={producto.pictureURL}
+              />
+            );
+          })}
+        </div>
+      </>
+    );
+  } else {
+    return null;
+  }
+};
 
 export default ItemList;

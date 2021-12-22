@@ -9,12 +9,7 @@ const ItemList = (props) => {
         <div>
           {productos.map((producto) => {
             return (
-              <Item
-                key={producto.id}
-                title={producto.title}
-                price={producto.price}
-                pictureURL={producto.pictureURL}
-              />
+              <Item producto={producto} />
             );
           })}
         </div>

@@ -1,17 +1,19 @@
-const Item = ({ id, title, price, pictureURL }) => {
+import ItemDetailContainer from "./ItemDetailContainer";
 
-  console.log("id del producto: "+id)
+const Item = ({ producto }) => {
+
   return (
     <div class="row">
       <div class="col s12 m6">
         <div class="card">
           <div class="card-image">
-            <img src={pictureURL} alt=""/>
-            <span class="card-title">{title}</span>
+            <img src={producto.pictureURL} alt="" />
+            <span class="card-title">{producto.title}</span>
             <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
           </div>
           <div class="card-content">
-            <p>{price}</p>
+            <ItemDetailContainer producto={producto}/>
+            <p>{producto.price}</p>
           </div>
         </div>
       </div>

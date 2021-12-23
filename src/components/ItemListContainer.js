@@ -33,7 +33,7 @@ const ItemListContainer = ({ greeting }) => {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(productosIniciales);
-      }, 1000);
+      }, 4000);
     });
 
     promise.then(productos => {

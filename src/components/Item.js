@@ -12,7 +12,6 @@ const Item = ({ producto }) => {
             <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
           </div>
           <div class="card-content">
-            <ItemDetailContainer producto={producto}/>
             <p>{producto.price}</p>
           </div>
         </div>

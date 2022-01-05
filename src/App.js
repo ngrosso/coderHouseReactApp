@@ -1,18 +1,23 @@
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import { useEffect } from "react";
 import M from "materialize-css";
 
 const menu = [
   {
-    name: "Home",
-    path: "#",
+    name: "Productos",
+    path: "/productos",
   },
   {
-    name: "Productos",
-    path: "#",
+    name: "Categoria 1",
+    path: "/categoria/1",
+  },
+  {
+    name: "Categoria 2",
+    path: "/categoria/2",
   }
 ]
 
@@ -24,12 +29,18 @@ function App() {
     M.AutoInit();
   }, [])
 
-  return (<>
-    <NavBar menu={menu} />
-    <ItemListContainer greeting={greeting} />
-    <ItemDetailContainer />
-
-  </>
+  return (
+  <BrowserRouter>
+  <NavBar menu={menu} />
+  <main>
+      <Routes>
+          <Route path="/" element={<ItemListContainer greeting={greeting}/>} />
+          <Route path="/producctos" element={<ItemListContainer greeting={greeting} />} />         
+          <Route path="/categoria/:id" element={<ItemListContainer greeting={greeting} />} />
+          <Route path="/producto/:id" element={<ItemDetailContainer />} />
+      </Routes>
+  </main>
+</BrowserRouter>
   );
 }
 

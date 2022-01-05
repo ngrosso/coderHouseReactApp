@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 const NavBar = ({ menu }) => {
@@ -7,10 +8,10 @@ const NavBar = ({ menu }) => {
       <nav>
         <div className="nav-wrapper blue">
           <div className="container">
-            <a href="/" className="brand-logo">Logo</a>
+            <Link to={`/`}><a href="/" className="brand-logo">Logo</a></Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               {menu.map((element, index) => {
-                return <li key={index}><a  href={element.path}>{element.name}</a></li>
+                return <li key={index}><a href={element.path}>{element.name}</a></li>
               }
               )}
               <li><CartWidget /></li>

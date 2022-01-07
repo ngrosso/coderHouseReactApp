@@ -31,3 +31,9 @@ span.badge{
   min-width: 3rem !important;
   font-size: 1rem !important;
 }
+
+.center {
+  margin: auto !important;
+  width: 60% !important;
+  padding: 10px !important;
+  }

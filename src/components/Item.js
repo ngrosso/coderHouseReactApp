@@ -8,19 +8,19 @@ const onAdd = (numero) => {
 const Item = ({ producto }) => {
 
   return (
-    <div class="row">
-      <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image">
+    <div className="center">
+      <div className="col s12 m6">
+        <div className="card">
+          <div className="card-image">
             <img src={producto.pictureURL} alt="" />
-            <span class="card-title">{producto.title}</span>
+            <span className="card-title">{producto.title}</span>
             <Link to={`/producto/${producto.id}`} id={producto.id}>
-              <a class="btn-floating halfway-fab waves-effect waves-light red">
-                <i class="material-icons">add</i>
+              <a className="btn-floating halfway-fab waves-effect waves-light red">
+                <i className="material-icons">info_outline</i>
               </a>
             </Link>
           </div>
-          <div class="card-content">
+          <div className="card-content">
             <p>$ {producto.price}</p>
             <ItemCount stock={5} initial={1} onAdd={onAdd} />
           </div>

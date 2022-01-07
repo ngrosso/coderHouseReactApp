@@ -10,14 +10,17 @@ const menu = [
   {
     name: "Productos",
     path: "/productos",
+    id: 0
   },
   {
-    name: "Categoria 1",
+    name: "Electronica",
     path: "/categoria/1",
+    id: 1
   },
   {
-    name: "Categoria 2",
+    name: "Maquillaje",
     path: "/categoria/2",
+    id: 2
   }
 ]
 

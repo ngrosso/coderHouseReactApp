@@ -1,28 +1,8 @@
 import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
-/*
-const productosIniciales = [{
-  id: 1,
-  title: "Auricular Headset",
-  price: 100,
-  descripcion: "Descripción del producto 1",
-  pictureURL: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-},
-{
-  id: 2,
-  title: "Crema",
-  price: 200,
-  descripcion: "Descripción del producto 2",
-  pictureURL: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1888&q=80"
-},
-{
-  id: 3,
-  title: "Airpods",
-  price: 300,
-  descripcion: "Descripción del producto 3",
-  pictureURL: "https://images.unsplash.com/photo-1585155770447-2f66e2a397b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
-}];*/
+import { useParams } from "react-router-dom";
+
 
 const apiURL = "https://my-json-server.typicode.com/ngrosso/ecommerce-grosso/productos"
 
@@ -30,29 +10,37 @@ const ItemListContainer = ({ greeting }) => {
 
   let [productos, setProductos] = useState([]);
 
+  const { id } = useParams();
+  console.log(Number(id))
+
   useEffect(() => {
-
-    // const promise = new Promise((resolve, reject) => {
-    //   setTimeout(() => {
-    //     resolve(productosIniciales);
-    //   }, 4000);
-    // });
-
-    // promise.then(productos => {
-    //   setProductos(productos);
-    // }).catch(error => {
-    //   console.error(error);
-    // })
 
     fetch(apiURL)
       .then((res) => res.json())
       .then((response) => {
-        setProductos(response)
+        console.log(response);
+        if (id) {
+
+          //se hace un filtro de tu lista de productos y se busca la categoria del item que coincida con la categoria que se declara desde el param (si es crema, va a buscar todos los productos que tengan categoria crema => la categoria debes declararla en la lista de productos)
+
+          const filtro = response.filter(
+            (item) => item.categoria === Number(id)
+          );
+
+          //Una vez que tenemos ese filtro, se guarda en un state
+          setProductos(filtro);
+        } else {
+          //En caso de que no haya productos que coincidan con la categoria (o sea que se quiere ver todos los productos se recupera directamente todos los productos => esta seria la opcion de cuando tocamos en productos)
+          setProductos(response);
+        }
       })
-      .catch(error => {
-        console.error(error)
-      })
-  }, []);
+      .catch((error) => {
+        console.error(error);
+      });
+
+    //Por ultimo, hacemos que varie de acuerdo al id seleccionado, es decir, si selecciona otra categoria, se vuelven a renderizar los productos
+
+  }, [id]);
 
   return (
     <div className="container">

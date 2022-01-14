@@ -1,4 +1,3 @@
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -11,8 +10,7 @@ const ItemListContainer = ({ greeting }) => {
   let [productos, setProductos] = useState([]);
 
   const { id } = useParams();
-  console.log(Number(id))
-
+  
   useEffect(() => {
 
     fetch(apiURL)

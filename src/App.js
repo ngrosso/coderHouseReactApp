@@ -1,6 +1,7 @@
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import Cart from "./components/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import { useEffect } from "react";
@@ -33,17 +34,18 @@ function App() {
   }, [])
 
   return (
-  <BrowserRouter>
-  <NavBar menu={menu} />
-  <main>
-      <Routes>
-          <Route path="/" element={<ItemListContainer greeting={greeting}/>} />
-          <Route path="/productos" element={<ItemListContainer greeting={greeting} />} />         
+    <BrowserRouter>
+      <NavBar menu={menu} />
+      <main>
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting={greeting} />} />
+          <Route path="/productos" element={<ItemListContainer greeting={greeting} />} />
           <Route path="/categoria/:id" element={<ItemListContainer greeting={greeting} />} />
           <Route path="/producto/:id" element={<ItemDetailContainer />} />
-      </Routes>
-  </main>
-</BrowserRouter>
+          <Route path="/carrito" element={<Cart />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 

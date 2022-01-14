@@ -2,11 +2,10 @@ import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ producto, getItem }) => {
 
-  const onAdd = (numero) => {
-    console.log("Añadido al carrito: " + numero);
+  const onAdd = (quantity) => {
+    console.log("Añadido al carrito: " + quantity);
   }
 
-  getItem();
   console.info(getItem())
 
   if (producto !== null) {
@@ -20,6 +19,7 @@ const ItemDetail = ({ producto, getItem }) => {
                 <span className="card-title">{producto.title}</span>
               </div>
               <div className="card-content">
+                <h3>$ {producto.price}</h3>
                 <p>{producto.descripcion}</p>
               </div>
               <div className="card-action">

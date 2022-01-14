@@ -1,9 +1,4 @@
 import { Link } from "react-router-dom";
-import ItemCount from "./ItemCount";
-
-const onAdd = (numero) => {
-  console.log("Añadido al carrito: " + numero);
-}
 
 const Item = ({ producto }) => {
 
@@ -22,7 +17,6 @@ const Item = ({ producto }) => {
           </div>
           <div className="card-content">
             <p>$ {producto.price}</p>
-            <ItemCount stock={5} initial={1} onAdd={onAdd} />
           </div>
         </div>
       </div>

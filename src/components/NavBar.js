@@ -16,7 +16,11 @@ const NavBar = ({ menu }) => {
                 </li>
               }
               )}
-              <li><CartWidget /></li>
+              <li>
+                <Link className="custom-link" to={`/carrito`}>
+                  <CartWidget />
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

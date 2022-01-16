@@ -24,21 +24,21 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   }
 
   return (
-    <div >
-      <div >
+    <div className="center-align">
+      <div>
         <p>Cantidad: {contador} (disponible: {stock})</p>
       </div>
-      <div className="container" >
-      <button className="waves-effect waves-light btn" onClick={restar}><i className="material-icons">remove</i></button>
-      <button className="waves-effect waves-light btn red" onClick={agregarItem}>Añadir al carrito</button>
-      <button className="waves-effect waves-light btn" onClick={sumar}><i className="material-icons">add</i></button>
+      <div >
+        <button className="waves-effect waves-light btn" onClick={restar}><i className="material-icons">remove</i></button>
+        <button className="waves-effect waves-light btn red" onClick={agregarItem}>Añadir al carrito</button>
+        <button className="waves-effect waves-light btn" onClick={sumar}><i className="material-icons">add</i></button>
       </div>
       {mostrar ? (
-      <div>
-        <Link to="/carrito">
-          <button type="submit" className="waves-effect waves-light btn green">Finalizar compra</button>
-        </Link>
-      </div>
+        <div>
+          <Link to="/carrito">
+            <button className="waves-effect waves-light btn green">Finalizar compra</button>
+          </Link>
+        </div>
       ) : <></>}
     </div>
   );

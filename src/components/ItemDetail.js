@@ -10,9 +10,6 @@ const ItemDetail = ({ producto, getItem }) => {
     addItem(producto, quantity);
   }
 
-
-  console.info(getItem())
-
   if (producto !== null) {
     return (<>
       <div className="center">
@@ -27,7 +24,7 @@ const ItemDetail = ({ producto, getItem }) => {
                 <h3>$ {producto.price}</h3>
                 <p>{producto.descripcion}</p>
               </div>
-              <div className="card-action">
+              <div className="card-content">
                 <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />
               </div>
             </div>

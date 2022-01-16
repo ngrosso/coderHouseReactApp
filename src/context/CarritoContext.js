@@ -13,21 +13,6 @@ const CustomProvider = ({ children }) => {
   const [cantidadTotal, setCantidadTotal] = useState(0);
   const [carrito, setCarrito] = useState([]);
 
-  // const addItem = (item, cantidad) => {
-  //   if (isInCart(item.id)) {
-  //     console.log(isInCart(item.id))
-  //     console.log("El producto ya estaba agregado")
-  //     //TODO: Sumar solo la cantidad sin superar el stock del item
-
-  //   } else {
-  //     const copiaItem = { ...item }
-  //     copiaItem.cantidad = cantidad;
-  //     setCantidadTotal(cantidadTotal + cantidad)
-  //     const copia = [...carrito, copiaItem];
-  //     setCarrito(copia);
-  //   }
-  // }
-
   const addItem = (item, cantidad) => {
     //El método findIndex() devuelve el índice del primer elemento de un array que cumpla con la función de prueba proporcionada. En caso contrario devuelve -1.
     const findPorId = carrito.findIndex(
@@ -41,7 +26,7 @@ const CustomProvider = ({ children }) => {
         { item: item, cantidad: cantidad },
       ];
       setCarrito(listaDeItems);
-      setCantidadTotal(cantidadTotal + 1);
+      setCantidadTotal(cantidadTotal + cantidad)
     } else {
       //Si el prod ya esta en el carrito...
       //Hacemos una const que sume la nueva cantidad mas la cantidad que ya estaba 
@@ -61,13 +46,13 @@ const CustomProvider = ({ children }) => {
         },
       ];
       setCarrito(listaDeItems);
-      setCantidadTotal(cantidadTotal);
+      setCantidadTotal(listaDeItems.map((item) => item.cantidad).reduce((a, b) => a + b, 0));
     }
   };
 
   const removeItem = (id) => {
     setCarrito(carrito.filter(p => p.item.id !== id));
-    setCantidadTotal(cantidadTotal > 0 ? cantidadTotal - 1 : 0)
+    setCantidadTotal(cantidadTotal - carrito.filter(p => p.item.id === id)[0].cantidad)
   }
 
   const clear = () => {

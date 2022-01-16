@@ -16,7 +16,7 @@ const Item = ({ producto }) => {
             </Link>
           </div>
           <div className="card-content">
-            <p>$ {producto.price}</p>
+            <p>$ {parseFloat(producto.price).toFixed(2)}</p>
           </div>
         </div>
       </div>

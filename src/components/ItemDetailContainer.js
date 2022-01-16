@@ -1,29 +1,26 @@
-import { useState,useEffect } from "react";
-import ItemDetail from "./ItemDetail";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
-const apiURL = "https://my-json-server.typicode.com/ngrosso/ecommerce-grosso/productos"
+import ItemDetail from "./ItemDetail";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../firebase";
 
 const ItemDetailContainer = () => {
 
-  const {id}  = useParams()
+  const { id } = useParams()
 
   let [productoDetalle, setProductoDetalle] = useState(null)
 
   useEffect(() => {
-    fetch(apiURL)
-      .then((res) => res.json())
-      .then((response) => {
-        setProductoDetalle(response.find(producto => producto.id === Number(id)))
-      })
-      .catch(error => {
-        console.error(error)
-      })
-    },[]);
 
-    const getItem = () => {
-      return id;
-    }
+    const q = query(collection(db, "productos"), where("id", "==", Number(id)));
+    getDocs(q).then((snapshot) => {
+      setProductoDetalle(snapshot.docs[0].data())
+    })
+  }, [id]);
+
+  const getItem = () => {
+    return id;
+  }
 
   return (
     <>

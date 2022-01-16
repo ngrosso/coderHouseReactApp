@@ -21,7 +21,7 @@ const ItemDetail = ({ producto, getItem }) => {
                 <span className="card-title">{producto.title}</span>
               </div>
               <div className="card-content">
-                <h3>$ {producto.price}</h3>
+                <h3>$ {parseFloat(producto.price).toFixed(2)}</h3>
                 <p>{producto.descripcion}</p>
               </div>
               <div className="card-content">

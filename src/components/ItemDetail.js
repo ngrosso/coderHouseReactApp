@@ -28,7 +28,7 @@ const ItemDetail = ({ producto, getItem }) => {
                 <p>{producto.descripcion}</p>
               </div>
               <div className="card-action">
-                <ItemCount stock={5} initial={1} onAdd={onAdd} />
+                <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />
               </div>
             </div>
           </div>

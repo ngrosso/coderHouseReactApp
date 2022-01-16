@@ -13,19 +13,19 @@ const Cart = () => {
           <th>Producto</th>
           <th>Cantidad</th>
           <th>Precio unitario</th>
-          <th>Total</th>
+          <th>Total por Producto</th>
         </tr>
       </thead>
       <tbody>
         {carrito.map((producto) => {
           return (
             <tr>
-              <td>{producto.title}</td>
+              <td>{producto.item.title}</td>
               <td>{producto.cantidad}</td>
-              <td>$ {producto.price}</td>
-              <td>$ {producto.cantidad * producto.price}</td>
+              <td>$ {producto.item.price}</td>
+              <td>$ {producto.cantidad * producto.item.price}</td>
               <td>
-                <button onClick={() => { removeItem(producto.id) }}>
+                <button onClick={() => { removeItem(producto.item.id) }}>
                   <i className="material-icons custom-shopping-cart">delete</i>
                 </button>
               </td>

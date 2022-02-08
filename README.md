@@ -32,15 +32,15 @@ Este proyecto es una aplicacion del tipo ecommerce que permite seleccionar, agre
    
 ## Como usar el ecommerce
 1. Seleccionar una categoria o "productos" para ver todos los productos disponibles
-   ![Navegacion entre categorias](/app/public/media/ecommerce-navegacion.gif)
+   ![Navegacion entre categorias](https://raw.githubusercontent.com/ngrosso/ecommerce-grosso/master/public/media/ecommerce-navegacion.gif)
 
 2. Seleccionar un producto y su cantidad para agregarlo al carrito, a medida que se van agregando al carrito quedan temporalmente 
-   ![Seleccion de producto](/app/public/media/ecommerce-compra.gif)
+   ![Seleccion de producto](https://raw.githubusercontent.com/ngrosso/ecommerce-grosso/master/public/media/ecommerce-compra.gif)
 3. Seleccionar la opcion "ver carrito" para ver los productos agregados al carrito, donde se puede modificar la compra antes de enviarla, por ultimo se confirma la compra
-   ![Ver carrito](/app/public/media/ecommerce-compra2.gif)
+   ![Ver carrito](https://raw.githubusercontent.com/ngrosso/ecommerce-grosso/master/public/media/ecommerce-compra2.gif)
 
 4. Confirmamos la insercion, en este ejemplo, de la orden "ScLVtTYzHL6oTQz5dXxO" en firebase
-   ![Confirmacion de orden](/app/public/media/ecommerce-persistencia.jpeg)
+   ![Confirmacion de orden](https://raw.githubusercontent.com/ngrosso/ecommerce-grosso/master/public/media/ecommerce-persistencia.jpeg)
 
 5. El carrito aparece vacio y listo para otra compara
-   ![Carrito vacio](/app/public/media/ecommerce-carrito.gif)
+   ![Carrito vacio](https://raw.githubusercontent.com/ngrosso/ecommerce-grosso/master/public/media/ecommerce-carrito.gif)

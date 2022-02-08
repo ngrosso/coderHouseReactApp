@@ -34,7 +34,7 @@ Este proyecto es una aplicacion del tipo ecommerce que permite seleccionar, agre
 1. Seleccionar una categoria o "productos" para ver todos los productos disponibles
    ![Navegacion entre categorias](/app/public/media/ecommerce-navegacion.gif)
 
-2. Seleccionar un producto y su cantidad para agregarlo al carrito
+2. Seleccionar un producto y su cantidad para agregarlo al carrito, a medida que se van agregando al carrito quedan temporalmente 
    ![Seleccion de producto](/app/public/media/ecommerce-compra.gif)
 3. Seleccionar la opcion "ver carrito" para ver los productos agregados al carrito, donde se puede modificar la compra antes de enviarla, por ultimo se confirma la compra
    ![Ver carrito](/app/public/media/ecommerce-compra2.gif)

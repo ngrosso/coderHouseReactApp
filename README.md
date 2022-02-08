@@ -3,6 +3,10 @@
 ## Descripcion del proyecto
 Este proyecto es una aplicacion del tipo ecommerce que permite seleccionar, agregar al carrito y eliminar productos del carrito para luego realizar la compra la cual sera persistida en en Firebase.
 
+**Demo del proyecto deployeado en netlify:**
+
+ https://optimistic-hamilton-0fbaf5.netlify.app/
+
 ## Tecnologias utilizadas
 * ReactJS
 * Materialize
